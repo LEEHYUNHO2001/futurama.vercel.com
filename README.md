@@ -1,8 +1,16 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Wine
 
-## Getting Started
+[샘플 API](https://sampleapis.com/) 에서 [Wine API](https://sampleapis.com/api-list/wines)와 [Beer API](https://sampleapis.com/api-list/beers)를 사용하고 있습니다. 맥주 데이터와 와인 데이터를 받아와 읽어주는 기능을 구현했습니다.
 
-First, run the development server:
+API를 이용해 데이터를 받아오고 프로젝트에서 유지보수 하기 쉽도록 추상화하는데 집중한 프로젝트 입니다.
+
+- 서비스 링크 : https://futurama-eta.vercel.app/
+- GitHub : https://github.com/LEEHYUNHO2001/futurama.vercel.com
+- Velog : https://velog.io/@leehyunho2001/Wine-API-%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8-%EB%B2%88%EC%99%B8
+
+<br>
+
+## 시작하기
 
 ```bash
 npm run dev
@@ -10,25 +18,33 @@ npm run dev
 yarn dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+[http://localhost:3000](http://localhost:3000) 에서 결과를 확인할 수 있습니다.
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+<br>
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+## 스택
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+- Front-End
+  - Next.js
+  - TypeScript
+  - Emotion(styled)
+- Deploy
+  - Vercel
 
-## Learn More
+<br>
 
-To learn more about Next.js, take a look at the following resources:
+## src 디렉터리 구조
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+```
 
-## Deploy on Vercel
+<br>
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 개발일정
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- 기간 : 2021.12.19(목) ~ 2021.12.26(일)
+  - 초기 환경 셋팅
+  - Futurama 데이터 읽기
+  - 프로젝트 추상화
+  - emotion(styled)
