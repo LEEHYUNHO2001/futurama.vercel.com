@@ -1,19 +1,12 @@
-import useSWR from "swr";
-import axios from "axios";
 import styled from "@emotion/styled";
+import { useCharactorData } from "../hooks/useCharactorData";
 import { CharactorData } from "../types/charactors";
 import { CharactorCard } from "./CharactorCard";
 
-const fetcher = (url: string) => axios(url).then((res) => res.data);
-
 export const CharactorCardContainer = () => {
-  const { data, error } = useSWR(
-    "https://api.sampleapis.com/futurama/characters",
-    fetcher
-  );
+  const { data, error } = useCharactorData();
   if (error) return <div>Error...</div>;
   if (!data) return <div>Loading...</div>;
-
   return (
     <div>
       <Container>
