@@ -1,8 +1,9 @@
 import type { NextPage } from "next";
 import useSWR from "swr";
 import axios from "axios";
-import { CharactorData } from "../types/charactors";
 import styled from "@emotion/styled";
+import { CharactorData } from "../../types/charactors";
+import { CharactorCard } from "../../components/CharactorCard";
 
 const fetcher = (url: string) => axios(url).then((res) => res.data);
 
@@ -31,12 +32,10 @@ const CharactorsIndexPage: NextPage = () => {
             saying,
           } = charactor;
           return (
-            <CharactorCard key={`futurama-charactor-${id}`}>
-              <Profile src={images.main} alt={name.first} />
-              <h1>
-                {name.first} {name.middle} {name.last}
-              </h1>
-            </CharactorCard>
+            <CharactorCard
+              charactorData={charactor}
+              key={`futurama-charactor-${id}`}
+            />
           );
         })}
       </Container>
@@ -49,15 +48,6 @@ const CharactorsIndexPage: NextPage = () => {
 const Container = styled.div`
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-`;
-const CharactorCard = styled.div`
-  display: flex;
-  max-width: 360px;
-`;
-const Profile = styled.img`
-  width: 100%;
-  aspect-ratio: 9 / 16;
-  object-fit: contain;
 `;
 
 export default CharactorsIndexPage;
