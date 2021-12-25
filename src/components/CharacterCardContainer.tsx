@@ -2,11 +2,13 @@ import styled from "@emotion/styled";
 import { useData } from "../hooks/useData";
 import { CharacterData } from "../types/characters";
 import { CharacterCard } from "./CharacterCard";
+import { Error } from "./Error";
+import { Loading } from "./Loading";
 
 export const CharacterCardContainer = () => {
   const { data, error } = useData("characters");
-  if (error) return <div>Error...</div>;
-  if (!data) return <div>Loading...</div>;
+  if (error) return <Error />;
+  if (!data) return <Loading />;
   return (
     <div>
       <Container>

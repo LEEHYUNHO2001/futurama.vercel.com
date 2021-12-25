@@ -1,12 +1,14 @@
 import { NextPage } from "next";
 import { useData } from "../../hooks/useData";
-import styled from "@emotion/styled";
 import { InfoData } from "../../types/info";
+import { Error } from "../../components/Error";
+import { Loading } from "../../components/Loading";
+import styled from "@emotion/styled";
 
 const InfoIndexPage: NextPage = () => {
   const { data, error } = useData("info");
-  if (error) return <div>Error...</div>;
-  if (!data) return <div>Loading...</div>;
+  if (error) return <Error />;
+  if (!data) return <Loading />;
   console.log(data);
 
   return (
