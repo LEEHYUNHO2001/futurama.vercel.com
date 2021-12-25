@@ -1,16 +1,16 @@
 import styled from "@emotion/styled";
-import { useCharactorData } from "../hooks/useCharactorData";
-import { CharactorData } from "../types/charactors";
-import { CharactorCard } from "./CharactorCard";
+import { useData } from "../hooks/useData";
+import { CharacterData } from "../types/characters";
+import { CharacterCard } from "./CharacterCard";
 
-export const CharactorCardContainer = () => {
-  const { data, error } = useCharactorData();
+export const CharacterCardContainer = () => {
+  const { data, error } = useData("characters");
   if (error) return <div>Error...</div>;
   if (!data) return <div>Loading...</div>;
   return (
     <div>
       <Container>
-        {data.map((charactor: CharactorData) => {
+        {data.map((character: CharacterData) => {
           const {
             age,
             gender,
@@ -21,11 +21,11 @@ export const CharactorCardContainer = () => {
             name,
             occupation,
             saying,
-          } = charactor;
+          } = character;
           return (
-            <CharactorCard
-              charactorData={charactor}
-              key={`futurama-charactor-${id}`}
+            <CharacterCard
+              characterData={character}
+              key={`futurama-character-${id}`}
             />
           );
         })}

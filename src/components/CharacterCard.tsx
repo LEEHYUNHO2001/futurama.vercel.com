@@ -1,12 +1,12 @@
 import styled from "@emotion/styled";
-import { CharactorData } from "../types/charactors";
+import { CharacterData } from "../types/characters";
 
-interface CharactorCardProps {
-  charactorData: CharactorData;
+interface CharacterCardProps {
+  characterData: CharacterData;
 }
 
-export const CharactorCard = ({ charactorData }: CharactorCardProps) => {
-  const { images, name } = charactorData;
+export const CharacterCard = ({ characterData }: CharacterCardProps) => {
+  const { images, name } = characterData;
   return (
     <Card>
       <Profile src={images.main} alt={name.first} />
