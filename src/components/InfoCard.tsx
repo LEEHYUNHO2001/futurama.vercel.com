@@ -45,15 +45,17 @@ export const InfoCard = () => {
 
 const H2 = styled.h2`
   text-align: center;
+  margin: 8vh 0;
   color: #f20530;
   &::before {
     content: "🍅 ";
   }
 `;
+
 const Container = styled.article`
   width: 80vw;
   margin: 0px 10vw;
-  padding: 50px;
+  padding: 20px 50px;
   background-color: #fff;
   border-radius: 20px;
 `;
