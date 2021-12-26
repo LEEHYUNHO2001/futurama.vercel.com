@@ -11,23 +11,13 @@ export const CharacterCardContainer = () => {
   if (!data) return <Loading />;
   return (
     <div>
+      <H2>Futurama Charactors List</H2>
       <Container>
         {data.map((character: CharacterData) => {
-          const {
-            age,
-            gender,
-            homePlanet,
-            id,
-            species,
-            images,
-            name,
-            occupation,
-            saying,
-          } = character;
           return (
             <CharacterCard
               characterData={character}
-              key={`futurama-character-${id}`}
+              key={`futurama-character-${character.id}`}
             />
           );
         })}
@@ -41,4 +31,14 @@ export const CharacterCardContainer = () => {
 const Container = styled.div`
   display: grid;
   grid-template-columns: repeat(3, 1fr);
+  margin-left: 5vw;
+`;
+
+const H2 = styled.h2`
+  margin: 8vh 0;
+  text-align: center;
+  color: deeppink;
+  &::before {
+    content: "🍑 ";
+  }
 `;
