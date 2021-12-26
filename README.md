@@ -25,6 +25,7 @@ yarn dev
 ## 스택
 
 - Front-End
+  - React Hooks
   - Next.js
   - TypeScript
   - Emotion(styled)
@@ -33,18 +34,78 @@ yarn dev
 
 <br>
 
-## src 디렉터리 구조
+## 개발일정
 
-```
-
-```
+- 기간 : 2021.12.20(목) ~ 2021.12.26(일)
+  - 초기 환경 셋팅
+  - Futurama API 데이터 사용
+  - 프로젝트 추상화
+  - emotion(styled)
 
 <br>
 
-## 개발일정
+## src 디렉터리 구조
 
-- 기간 : 2021.12.19(목) ~ 2021.12.26(일)
-  - 초기 환경 셋팅
-  - Futurama 데이터 읽기
-  - 프로젝트 추상화
-  - emotion(styled)
+```
+  src
+  ├─ components
+  │   ├─ layout
+  │   │   ├─ index.ts
+  │   │   ├─ Layout.tsx
+  │   │   ├─ Navigation.tsx
+  │   │
+  │   ├─ CastCard.tsx
+  │   ├─ CharacterCard.tsx
+  │   ├─ CharacterCardContainer.tsx
+  │   ├─ EpisodesCard.tsx
+  │   ├─ Error.tsx
+  │   ├─ InfoCard.tsx
+  │   ├─ InventoryCard.tsx
+  │   ├─ Loading.tsx
+  │   ├─ QuestionsCard.tsx
+  │
+  ├─ constants
+  │   ├─ index.ts
+  │
+  ├─ hooks
+  │   ├─ useData.tsx
+  │
+  ├─ pages
+  │   ├─ cast
+  │   │   ├─ index.tsx
+  │   │
+  │   ├─ characters
+  │   │   ├─ index.tsx
+  │   │
+  │   ├─ episodes
+  │   │   ├─ index.tsx
+  │   │
+  │   ├─ info
+  │   │   ├─ index.tsx
+  │   │
+  │   ├─ inventory
+  │   │   ├─ index.tsx
+  │   │
+  │   ├─ questions
+  │   │   ├─ index.tsx
+  │   │
+  │   ├─ _app.tsx
+  │   └─ index.tsx
+  │
+  ├─ types
+  │   ├─ cast.ts
+  │   ├─ characters.ts
+  │   ├─ episodes.ts
+  │   ├─ info.ts
+  │   ├─ inventory.ts
+  │   ├─ questions.ts
+  │
+  └─  utils
+        ├─ fetcher.ts
+
+  index.html
+```
+
+### 더 도전해보기
+
+동적 라우팅
