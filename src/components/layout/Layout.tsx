@@ -12,6 +12,7 @@ export const Layout: React.FC = ({ children }) => {
 
 const Container = styled.body`
   background-color: #05aff2;
+  overflow-x: hidden;
 `;
 const Main = styled.main`
   /* display: flex; */
