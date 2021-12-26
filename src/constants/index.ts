@@ -24,7 +24,7 @@ export const ROUTES = [
   {
     ID: 4,
     PATH: "/questions",
-    LABEL: "QueSTiONS",
+    LABEL: "QUESTIONS",
   },
   {
     ID: 5,

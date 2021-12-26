@@ -1,10 +1,15 @@
 import { Navigation } from "./Navigation";
+import styled from "@emotion/styled";
 
 export const Layout: React.FC = ({ children }) => {
   return (
-    <div>
+    <Container>
       <Navigation />
       <main>{children}</main>
-    </div>
+    </Container>
   );
 };
+
+const Container = styled.body`
+  background-color: #05aff2;
+`;
