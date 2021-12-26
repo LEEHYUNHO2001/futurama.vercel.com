@@ -10,7 +10,7 @@ export const InfoCard = () => {
   if (error) return <Error />;
   if (!data) return <Loading />;
   return (
-    <div>
+    <section>
       <H2>Info</H2>
       <Container>
         {data.map((info: InfoData) => {
@@ -39,7 +39,7 @@ export const InfoCard = () => {
           );
         })}
       </Container>
-    </div>
+    </section>
   );
 };
 
