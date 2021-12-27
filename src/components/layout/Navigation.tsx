@@ -37,6 +37,9 @@ const Container = styled.header`
   height: 15vh;
   text-align: center;
   align-items: center;
+  @media (max-width: ${MEDIA_QUERY_END_POINT.MOBILE}) {
+    display: none;
+  }
 `;
 const H1 = styled.h1`
   width: 100%;
