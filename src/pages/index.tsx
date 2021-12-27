@@ -1,6 +1,7 @@
 import type { NextPage } from "next";
 import Head from "next/head";
 import styled from "@emotion/styled";
+import { MEDIA_QUERY_END_POINT } from "../constants";
 
 const Home: NextPage = () => {
   return (
@@ -33,6 +34,10 @@ const Article = styled.article`
 const Iframe = styled.iframe`
   width: 50vw;
   height: 50vh;
+  @media (max-width: ${MEDIA_QUERY_END_POINT.MOBILE}) {
+    width: 25vw;
+    height: 20vh;
+  }
 `;
 
 export default Home;

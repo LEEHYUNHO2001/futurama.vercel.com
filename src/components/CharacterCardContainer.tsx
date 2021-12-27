@@ -50,4 +50,7 @@ const Container = styled.div`
     font-size: 12px;
     grid-template-columns: repeat(2, 1fr);
   }
+  @media (max-width: ${MEDIA_QUERY_END_POINT.MOBILE}) {
+    grid-template-columns: repeat(1, 1fr);
+  }
 `;

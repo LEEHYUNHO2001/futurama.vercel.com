@@ -70,10 +70,16 @@ const Container = styled.article`
   padding: 20px 50px;
   background-color: #fff;
   border-radius: 20px;
+  @media (max-width: ${MEDIA_QUERY_END_POINT.MOBILE}) {
+    font-size: 12px;
+  }
 `;
 const Synopsis = styled.p`
   font-size: 20px;
   @media (max-width: ${MEDIA_QUERY_END_POINT.TABLET}) {
     font-size: 16px;
+  }
+  @media (max-width: ${MEDIA_QUERY_END_POINT.MOBILE}) {
+    font-size: 12px;
   }
 `;

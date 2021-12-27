@@ -67,6 +67,9 @@ const Container = styled.ul`
     grid-template-columns: repeat(3, 1fr);
     font-size: 14px;
   }
+  @media (max-width: ${MEDIA_QUERY_END_POINT.MOBILE}) {
+    grid-template-columns: repeat(2, 1fr);
+  }
 `;
 const SubContainer = styled.li`
   list-style: none;

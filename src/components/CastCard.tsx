@@ -59,6 +59,9 @@ const ItemContainer = styled.ul`
   @media (max-width: ${MEDIA_QUERY_END_POINT.TABLET}) {
     grid-template-columns: repeat(3, 1fr);
   }
+  @media (max-width: ${MEDIA_QUERY_END_POINT.MOBILE}) {
+    grid-template-columns: repeat(2, 1fr);
+  }
 `;
 const Item = styled.li``;
 const H3 = styled.h3`

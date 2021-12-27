@@ -67,11 +67,19 @@ const ItemContainer = styled.ul`
   @media (max-width: ${MEDIA_QUERY_END_POINT.TABLET}) {
     font-size: 12px;
   }
+  @media (max-width: ${MEDIA_QUERY_END_POINT.MOBILE}) {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2vh 2vw;
+    margin: 0px 3vw;
+  }
 `;
 const Item = styled.li`
   background-color: #908df2;
   border-radius: 20px;
   padding: 0 50px;
+  @media (max-width: ${MEDIA_QUERY_END_POINT.MOBILE}) {
+    padding: 0 20px;
+  }
 `;
 const P = styled.p`
   text-align: start;
