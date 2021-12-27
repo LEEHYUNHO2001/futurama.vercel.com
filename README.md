@@ -43,6 +43,7 @@ yarn dev
   - 프로젝트 추상화
   - 동적 라우팅
   - emotion(styled)
+  - 반응형
 
 <br>
 
