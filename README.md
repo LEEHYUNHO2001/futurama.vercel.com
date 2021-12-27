@@ -72,6 +72,7 @@ yarn dev
   │
   ├─ hooks
   │   ├─ useData.tsx
+  │   ├─ useCharacterData.tsx
   │
   ├─ pages
   │   ├─ cast
@@ -79,6 +80,7 @@ yarn dev
   │   │
   │   ├─ characters
   │   │   ├─ index.tsx
+  │   │   ├─ [id]].tsx
   │   │
   │   ├─ episodes
   │   │   ├─ index.tsx
@@ -102,6 +104,7 @@ yarn dev
   │   ├─ info.ts
   │   ├─ inventory.ts
   │   ├─ questions.ts
+  │   ├─ routes.ts
   │
   └─  utils
         ├─ fetcher.ts
