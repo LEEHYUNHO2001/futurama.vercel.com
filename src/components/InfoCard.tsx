@@ -10,7 +10,7 @@ export const InfoCard = () => {
   if (error) return <Error />;
   if (!data) return <Loading />;
   return (
-    <section>
+    <Section>
       <H2>Info</H2>
       <Container>
         {data.map((info: InfoData) => {
@@ -39,13 +39,22 @@ export const InfoCard = () => {
           );
         })}
       </Container>
-    </section>
+    </Section>
   );
 };
 
+const Section = styled.section`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100vh;
+`;
+
 const H2 = styled.h2`
   text-align: center;
-  margin: 8vh 0;
+  margin-top: 15vh;
   color: #f20530;
   &::before {
     content: "🍅 ";
@@ -54,7 +63,7 @@ const H2 = styled.h2`
 
 const Container = styled.article`
   width: 80vw;
-  margin: 0px 10vw;
+  height: 70vh;
   padding: 20px 50px;
   background-color: #fff;
   border-radius: 20px;
