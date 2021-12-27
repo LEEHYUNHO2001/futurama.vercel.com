@@ -4,14 +4,15 @@ import { CharacterData } from "../types/characters";
 import { CharacterCard } from "./CharacterCard";
 import { Error } from "./Error";
 import { Loading } from "./Loading";
+import { MEDIA_QUERY_END_POINT } from "../constants";
 
 export const CharacterCardContainer = () => {
   const { data, error } = useData("characters");
   if (error) return <Error />;
   if (!data) return <Loading />;
   return (
-    <div>
-      <H2>Futurama Charactors List</H2>
+    <Section>
+      <H2>Charactors</H2>
       <Container>
         {data.map((character: CharacterData) => {
           return (
@@ -22,23 +23,31 @@ export const CharacterCardContainer = () => {
           );
         })}
       </Container>
-    </div>
+    </Section>
   );
 };
 
-//할 일 : 미디어 쿼리 추가하기
-
-const Container = styled.div`
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  margin-left: 5vw;
+const Section = styled.section`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
 `;
-
 const H2 = styled.h2`
-  margin: 8vh 0;
+  margin: 20vh 0 5vh 0;
   text-align: center;
   color: deeppink;
   &::before {
     content: "🍑 ";
+  }
+`;
+const Container = styled.div`
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 5vw;
+  @media (max-width: ${MEDIA_QUERY_END_POINT.TABLET}) {
+    font-size: 12px;
+    grid-template-columns: repeat(2, 1fr);
   }
 `;

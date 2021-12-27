@@ -1,6 +1,7 @@
 import styled from "@emotion/styled";
 import Link from "next/link";
 import { CharacterData } from "../types/characters";
+import { MEDIA_QUERY_END_POINT } from "../constants";
 
 interface CharacterCardProps {
   characterData: CharacterData;
@@ -73,4 +74,7 @@ const Profile = styled.img`
   width: 100%;
   aspect-ratio: 9 / 10;
   object-fit: contain;
+  @media (max-width: ${MEDIA_QUERY_END_POINT.TABLET}) {
+    aspect-ratio: 12 / 10;
+  }
 `;

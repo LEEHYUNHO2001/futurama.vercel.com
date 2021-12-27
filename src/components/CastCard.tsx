@@ -4,6 +4,7 @@ import { useData } from "../hooks/useData";
 import { CastData } from "../types/cast";
 import Link from "next/link";
 import styled from "@emotion/styled";
+import { MEDIA_QUERY_END_POINT } from "../constants";
 
 export const CastCard = () => {
   const { data, error } = useData("cast");
@@ -11,7 +12,7 @@ export const CastCard = () => {
   if (!data) return <Loading />;
 
   return (
-    <div>
+    <Section>
       <H2>Cast</H2>
       <ItemContainer>
         {data.map((castData: CastData, index: number) => {
@@ -28,12 +29,18 @@ export const CastCard = () => {
           );
         })}
       </ItemContainer>
-    </div>
+    </Section>
   );
 };
-
+const Section = styled.section`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+`;
 const H2 = styled.h2`
-  margin: 8vh 0;
+  margin: 20vh 0 5vh 0;
   text-align: center;
   color: #474073;
   &::before {
@@ -47,7 +54,11 @@ const ItemContainer = styled.ul`
   grid-template-columns: repeat(5, 1fr);
   row-gap: 5vh;
   list-style: none;
+  margin-bottom: 5vh;
   background-color: #e5f2b6;
+  @media (max-width: ${MEDIA_QUERY_END_POINT.TABLET}) {
+    grid-template-columns: repeat(3, 1fr);
+  }
 `;
 const Item = styled.li``;
 const H3 = styled.h3`

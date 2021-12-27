@@ -4,6 +4,7 @@ import { useData } from "../hooks/useData";
 import { QuestionsData } from "../types/questions";
 import styled from "@emotion/styled";
 import { useState } from "react";
+import { MEDIA_QUERY_END_POINT } from "../constants";
 
 const onClickPossible = (
   questionsData: QuestionsData,
@@ -28,7 +29,7 @@ export const QuestionsCard = () => {
   if (error) return <Error />;
   if (!data) return <Loading />;
   return (
-    <div>
+    <Section>
       <H2>Questions</H2>
       <ItemContainer>
         <OpenAnswer onClick={openAnswer}>Open Answer</OpenAnswer>
@@ -62,12 +63,18 @@ export const QuestionsCard = () => {
           );
         })}
       </ItemContainer>
-    </div>
+    </Section>
   );
 };
-
+const Section = styled.section`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+`;
 const H2 = styled.h2`
-  margin: 8vh 0;
+  margin: 20vh 0 5vh 0;
   text-align: center;
   color: #bf754b;
   &::before {
@@ -76,11 +83,13 @@ const H2 = styled.h2`
 `;
 const H3 = styled.h3`
   font-size: 30px;
+  @media (max-width: ${MEDIA_QUERY_END_POINT.TABLET}) {
+    font-size: 20px;
+  }
 `;
 const ItemContainer = styled.ul`
   width: 80vw;
   list-style: none;
-  margin-left: 10vw;
   background-color: #c9ebf2;
   display: flex;
   flex-direction: column;
@@ -93,6 +102,9 @@ const Possible = styled.li`
   &:hover {
     color: blue;
     font-weight: bold;
+  }
+  @media (max-width: ${MEDIA_QUERY_END_POINT.TABLET}) {
+    font-size: 16px;
   }
 `;
 const OpenAnswer = styled.p`

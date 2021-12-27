@@ -50,7 +50,7 @@ const Section = styled.section`
   width: 100%;
 `;
 const H2 = styled.h2`
-  margin: 8vh 0;
+  margin: 20vh 0 5vh 0;
   text-align: center;
   color: #f2e205;
   &::before {
