@@ -3,13 +3,14 @@ import { Loading } from "../components/Loading";
 import { useData } from "../hooks/useData";
 import { EpisodesData } from "../types/episodes";
 import styled from "@emotion/styled";
+import { MEDIA_QUERY_END_POINT } from "../constants";
 
 export const EpisodesCard = () => {
   const { data, error } = useData("episodes");
   if (error) return <Error />;
   if (!data) return <Loading />;
   return (
-    <section>
+    <Section>
       <H2>Episodes</H2>
       <Container>
         {data.map((episodesData: EpisodesData) => {
@@ -17,39 +18,55 @@ export const EpisodesCard = () => {
             episodesData;
           return (
             <SubContainer key={`futurama-cast-${id}`}>
-              <h3>
+              <H3>
                 {title} ({number})
-              </h3>
+              </H3>
               <p>{desc}</p>
               <p>
-                <strong>writers</strong> : {writers}
+                <Strong>writers</Strong> : {writers}
               </p>
               <p>
-                <strong>originalAirDate</strong> : {originalAirDate}
+                <Strong>originalAirDate</Strong> : {originalAirDate}
               </p>
               <p></p>
             </SubContainer>
           );
         })}
       </Container>
-    </section>
+    </Section>
   );
 };
 
+const Section = styled.section`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+`;
 const H2 = styled.h2`
-  margin: 8vh 0;
   text-align: center;
+  margin: 20vh 0 5vh 0;
   color: #16731c;
   &::before {
     content: "🥝 ";
   }
 `;
+const H3 = styled.h3`
+  color: deeppink;
+`;
+const Strong = styled.strong`
+  color: #3fa6a6;
+`;
 const Container = styled.ul`
   width: 90vw;
-  margin: 0vh 3vw;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 3vw;
+  @media (max-width: ${MEDIA_QUERY_END_POINT.TABLET}) {
+    grid-template-columns: repeat(3, 1fr);
+    font-size: 14px;
+  }
 `;
 const SubContainer = styled.li`
   list-style: none;
