@@ -29,17 +29,21 @@ export const Navigation = () => {
 };
 
 const Container = styled.header`
+  position: fixed;
   display: flex;
   background-color: #f2e205;
-  width: 100%;
-  height: 10vh;
+  width: 100vw;
+  height: 15vh;
   text-align: center;
+  align-items: center;
 `;
 const H1 = styled.h1`
-  width: 15vw;
+  width: 100%;
   margin-left: 5vw;
-  background-color: #f28705;
-  color: black;
+  background-color: #732c02;
+  color: #f2c53d;
+  border: 6px solid #f28627;
+  text-shadow: -1px 0 #f28627, 0 1px #f28627, 1px 0 #f28627, 0 -1px #f28627;
   border-radius: 15px;
   padding-bottom: 6px;
 `;
@@ -50,9 +54,10 @@ const ItemContainer = styled.ul`
 `;
 const Item = styled.li`
   list-style: none;
-  font-size: 16px;
+  font-size: 26px;
   margin-bottom: 5px;
   font-weight: bold;
+  text-shadow: -1px 0 #000, 0 1px #000, 1px 0 #000, 0 -1px #000;
   & :hover {
     color: #f20530;
   }
