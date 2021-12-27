@@ -3,6 +3,7 @@ import { Loading } from "../components/Loading";
 import { useData } from "../hooks/useData";
 import { InventoryData } from "../types/inventory";
 import styled from "@emotion/styled";
+import { MEDIA_QUERY_END_POINT } from "../constants";
 
 export const InventoryCard = () => {
   const { data, error } = useData("inventory");
@@ -10,7 +11,7 @@ export const InventoryCard = () => {
   if (!data) return <Loading />;
 
   return (
-    <div>
+    <Section>
       <H2>Inventory</H2>
       <ItemContainer>
         {data.map((inventoryData: InventoryData) => {
@@ -21,26 +22,33 @@ export const InventoryCard = () => {
               <H3>
                 {title} - {category}
               </H3>
-              <p>{description}</p>
+              <P>{description}</P>
               {slogan && (
-                <p>
+                <P>
                   <strong>slogan</strong> : {slogan}
-                </p>
+                </P>
               )}
-              <p>
+              <P>
                 <strong>stock</strong> : {stock}
-              </p>
-              <p>
+              </P>
+              <P>
                 <strong>price</strong> : {price}
-              </p>
+              </P>
             </Item>
           );
         })}
       </ItemContainer>
-    </div>
+    </Section>
   );
 };
 
+const Section = styled.section`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+`;
 const H2 = styled.h2`
   margin: 8vh 0;
   text-align: center;
@@ -53,16 +61,25 @@ const ItemContainer = styled.ul`
   list-style: none;
   display: grid;
   text-align: center;
-  gap: 5vh 10vw;
+  gap: 5vh 5vw;
   grid-template-columns: repeat(3, 1fr);
   margin: 0px 10vw;
+  @media (max-width: ${MEDIA_QUERY_END_POINT.TABLET}) {
+    font-size: 12px;
+  }
 `;
 const Item = styled.li`
-  background-color: #f2af88;
+  background-color: #908df2;
   border-radius: 20px;
   padding: 0 50px;
 `;
+const P = styled.p`
+  text-align: start;
+  background-color: #a0dbf2;
+  border-radius: 5px;
+  padding: 5px 10px;
+`;
 const H3 = styled.h3`
   background-color: #d9d059;
-  border-radius: 10px;
+  border-radius: 8px;
 `;
