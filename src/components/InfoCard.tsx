@@ -4,6 +4,7 @@ import { Error } from "../components/Error";
 import { Loading } from "../components/Loading";
 import Link from "next/link";
 import styled from "@emotion/styled";
+import { MEDIA_QUERY_END_POINT } from "../constants";
 
 export const InfoCard = () => {
   const { data, error } = useData("info");
@@ -17,24 +18,22 @@ export const InfoCard = () => {
           const { id, synopsis, yearsAired, creators } = info;
           return (
             <div key={`futurama-info-${id}`}>
-              <h3>Synopsis</h3>
+              <H3>Synopsis</H3>
               <Synopsis>{synopsis}</Synopsis>
-              <SubContainer>
-                <h3>Years Aired</h3>
-                <p>{yearsAired}</p>
-              </SubContainer>
-              <SubContainer>
-                <h3>Creators</h3>
-                {creators.map((creators) => {
-                  return (
-                    <p key={`info-creatort-${creators.name}`}>
-                      <Link href={creators.url}>
-                        <a>{creators.name} &#128072; More</a>
-                      </Link>
-                    </p>
-                  );
-                })}
-              </SubContainer>
+
+              <H3>Years Aired</H3>
+              <p>{yearsAired}</p>
+
+              <H3>Creators</H3>
+              {creators.map((creators) => {
+                return (
+                  <p key={`info-creatort-${creators.name}`}>
+                    <Link href={creators.url}>
+                      <a>{creators.name} &#128072; More</a>
+                    </Link>
+                  </p>
+                );
+              })}
             </div>
           );
         })}
@@ -49,28 +48,32 @@ const Section = styled.section`
   align-items: center;
   justify-content: center;
   width: 100%;
-  height: 100vh;
 `;
 
 const H2 = styled.h2`
   text-align: center;
-  margin-top: 15vh;
+  margin: 20vh 0 5vh 0;
   color: #f20530;
   &::before {
     content: "🍅 ";
   }
 `;
-
+const H3 = styled.h3`
+  background-color: #a9bf04;
+  color: #03a62c;
+  border-radius: 5px;
+  display: inline;
+  padding: 5px;
+`;
 const Container = styled.article`
   width: 80vw;
-  height: 70vh;
   padding: 20px 50px;
   background-color: #fff;
   border-radius: 20px;
 `;
-const SubContainer = styled.div`
-  margin-top: 5vh;
-`;
 const Synopsis = styled.p`
   font-size: 20px;
+  @media (max-width: ${MEDIA_QUERY_END_POINT.TABLET}) {
+    font-size: 16px;
+  }
 `;

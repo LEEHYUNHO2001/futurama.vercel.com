@@ -2,6 +2,7 @@ import Link from "next/link";
 import { ROUTES } from "../../constants";
 import { ROUTESDATA } from "../../types/routes";
 import styled from "@emotion/styled";
+import { MEDIA_QUERY_END_POINT } from "../../constants";
 
 export const Navigation = () => {
   return (
@@ -46,6 +47,10 @@ const H1 = styled.h1`
   text-shadow: -1px 0 #f28627, 0 1px #f28627, 1px 0 #f28627, 0 -1px #f28627;
   border-radius: 15px;
   padding-bottom: 6px;
+  @media (max-width: ${MEDIA_QUERY_END_POINT.TABLET}) {
+    font-size: 25px;
+    border-radius: 12px;
+  }
 `;
 const ItemContainer = styled.ul`
   width: 80vw;
@@ -60,5 +65,8 @@ const Item = styled.li`
   text-shadow: -1px 0 #000, 0 1px #000, 1px 0 #000, 0 -1px #000;
   & :hover {
     color: #f20530;
+  }
+  @media (max-width: ${MEDIA_QUERY_END_POINT.TABLET}) {
+    font-size: 18px;
   }
 `;
