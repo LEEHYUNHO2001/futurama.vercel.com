@@ -6,11 +6,7 @@ import styled from "@emotion/styled";
 import { useState } from "react";
 import { MEDIA_QUERY_END_POINT } from "../constants";
 
-const onClickPossible = (
-  questionsData: QuestionsData,
-  possible: string,
-  e: any
-) => {
+const onClickPossible = (questionsData: QuestionsData, possible: string) => {
   if (questionsData.correctAnswer === possible) {
     alert("정답");
   } else {
@@ -46,8 +42,8 @@ export const QuestionsCard = () => {
                   return (
                     <ul key={`possibleAnswers-${possible}`}>
                       <Possible
-                        onClick={(e) => {
-                          onClickPossible(questionsData, possible, e);
+                        onClick={() => {
+                          onClickPossible(questionsData, possible);
                         }}
                       >
                         {possible}
