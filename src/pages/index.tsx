@@ -30,13 +30,14 @@ const Article = styled.article`
   display: flex;
   justify-content: center;
   align-items: center;
+  background: url("http://oyster.ignimgs.com/wordpress/stg.ign.com/2013/09/futurama_090413_1600.jpg")
+    center center/cover no-repeat;
 `;
 const Iframe = styled.iframe`
   width: 50vw;
   height: 50vh;
   @media (max-width: ${MEDIA_QUERY_END_POINT.MOBILE}) {
-    width: 25vw;
-    height: 20vh;
+    width: 100%;
   }
 `;
 

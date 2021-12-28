@@ -60,6 +60,9 @@ const Card = styled.article`
   background-color: #fff;
   border-radius: 20px;
   padding: 50px 40px 50px 0px;
+  @media (max-width: ${MEDIA_QUERY_END_POINT.MOBILE}) {
+    padding: 30px 20px 30px 0px;
+  }
 `;
 const ImgContainer = styled.a`
   display: flex;
@@ -76,5 +79,9 @@ const Profile = styled.img`
   object-fit: contain;
   @media (max-width: ${MEDIA_QUERY_END_POINT.TABLET}) {
     aspect-ratio: 12 / 10;
+  }
+  @media (max-width: ${MEDIA_QUERY_END_POINT.MOBILE}) {
+    width: 150px;
+    height: 150px;
   }
 `;
