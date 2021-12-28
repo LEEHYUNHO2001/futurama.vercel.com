@@ -7,7 +7,7 @@ API를 이용해 데이터를 받아오고 스크린에 출력하여 Futurama �
 
 - 서비스 링크 : https://futurama-eta.vercel.app/
 - GitHub : https://github.com/LEEHYUNHO2001/futurama.vercel.com
-- Velog : https://velog.io/@leehyunho2001/Wine-API-%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8-%EB%B2%88%EC%99%B8
+- Velog : https://velog.io/@leehyunho2001/Futurama-API
 
 <br>
 
@@ -55,6 +55,7 @@ yarn dev
   │   ├─ layout
   │   │   ├─ index.ts
   │   │   ├─ Layout.tsx
+  │   │   ├─ MobileNav.tsx
   │   │   ├─ Navigation.tsx
   │   │
   │   ├─ CastCard.tsx
@@ -72,7 +73,6 @@ yarn dev
   │
   ├─ hooks
   │   ├─ useData.tsx
-  │   ├─ useCharacterData.tsx
   │
   ├─ pages
   │   ├─ cast
