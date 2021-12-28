@@ -3,6 +3,7 @@ import { useRouter } from "next/router";
 import { Error } from "../../components/Error";
 import { Loading } from "../../components/Loading";
 import { useData } from "../../hooks/useData";
+import styled from "@emotion/styled";
 
 const CharacterDetail: NextPage = () => {
   const router = useRouter();
@@ -15,11 +16,27 @@ const CharacterDetail: NextPage = () => {
   const { images, name } = data;
 
   return (
-    <div>
-      <h3>Character</h3>
+    <Section>
+      <H2>Character Detail</H2>
       <img src={images.main} alt="캐릭터" />
-    </div>
+    </Section>
   );
 };
+
+const Section = styled.section`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+`;
+const H2 = styled.h2`
+  margin: 20vh 0 5vh 0;
+  text-align: center;
+  color: #bf754b;
+  &::before {
+    content: "🥜 ";
+  }
+`;
 
 export default CharacterDetail;
