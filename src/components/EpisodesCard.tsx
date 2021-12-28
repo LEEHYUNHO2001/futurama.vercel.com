@@ -6,7 +6,7 @@ import styled from "@emotion/styled";
 import { MEDIA_QUERY_END_POINT } from "../constants";
 
 export const EpisodesCard = () => {
-  const { data, error } = useData("episodes");
+  const { data, error } = useData("episodes", "");
   if (error) return <Error />;
   if (!data) return <Loading />;
   return (

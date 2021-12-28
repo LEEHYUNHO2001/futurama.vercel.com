@@ -15,7 +15,7 @@ const onClickPossible = (questionsData: QuestionsData, possible: string) => {
 };
 
 export const QuestionsCard = () => {
-  const { data, error } = useData("questions");
+  const { data, error } = useData("questions", "");
   const [answerFlag, setAnswerFlag] = useState(false);
 
   const openAnswer = () => {

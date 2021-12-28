@@ -7,7 +7,7 @@ import styled from "@emotion/styled";
 import { MEDIA_QUERY_END_POINT } from "../constants";
 
 export const CastCard = () => {
-  const { data, error } = useData("cast");
+  const { data, error } = useData("cast", "");
   if (error) return <Error />;
   if (!data) return <Loading />;
 

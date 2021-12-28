@@ -7,7 +7,7 @@ import { Loading } from "./Loading";
 import { MEDIA_QUERY_END_POINT } from "../constants";
 
 export const CharacterCardContainer = () => {
-  const { data, error } = useData("characters");
+  const { data, error } = useData("characters", "");
   if (error) return <Error />;
   if (!data) return <Loading />;
   return (

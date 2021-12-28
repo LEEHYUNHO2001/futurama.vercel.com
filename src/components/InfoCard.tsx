@@ -7,7 +7,7 @@ import styled from "@emotion/styled";
 import { MEDIA_QUERY_END_POINT } from "../constants";
 
 export const InfoCard = () => {
-  const { data, error } = useData("info");
+  const { data, error } = useData("info", "");
   if (error) return <Error />;
   if (!data) return <Loading />;
   return (
