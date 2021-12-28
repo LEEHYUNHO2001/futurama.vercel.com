@@ -62,8 +62,16 @@ const H1 = styled.h1`
   border-radius: 20px;
 `;
 const Nav = styled.nav`
+  width: 90vw;
   display: flex;
+  background-color: #fff;
+  z-index: 100;
   flex-direction: column;
-  font-size: 12px;
+  justify-content: center;
+  font-size: 4.5em;
   font-weight: bold;
+  text-align: center;
+  & > a {
+    border: 1px solid rgba(0, 0, 0, 0.3);
+  }
 `;
