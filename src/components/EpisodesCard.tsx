@@ -43,6 +43,9 @@ const Section = styled.section`
   align-items: center;
   justify-content: center;
   width: 100%;
+  @media (max-width: ${MEDIA_QUERY_END_POINT.MOBILE}) {
+    display: inline-block;
+  }
 `;
 const H2 = styled.h2`
   text-align: center;
@@ -50,6 +53,9 @@ const H2 = styled.h2`
   color: #16731c;
   &::before {
     content: "🥝 ";
+  }
+  @media (max-width: ${MEDIA_QUERY_END_POINT.MOBILE}) {
+    margin: 10vh 0 5vh 0;
   }
 `;
 const H3 = styled.h3`
@@ -68,7 +74,7 @@ const Container = styled.ul`
     font-size: 14px;
   }
   @media (max-width: ${MEDIA_QUERY_END_POINT.MOBILE}) {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(1, 1fr);
   }
 `;
 const SubContainer = styled.li`

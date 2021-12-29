@@ -56,6 +56,9 @@ const H2 = styled.h2`
   &::before {
     content: "🍋 ";
   }
+  @media (max-width: ${MEDIA_QUERY_END_POINT.MOBILE}) {
+    margin: 10vh 0 5vh 0;
+  }
 `;
 const ItemContainer = styled.ul`
   list-style: none;
@@ -70,7 +73,7 @@ const ItemContainer = styled.ul`
   @media (max-width: ${MEDIA_QUERY_END_POINT.MOBILE}) {
     grid-template-columns: repeat(2, 1fr);
     gap: 2vh 2vw;
-    margin: 0px 3vw;
+    margin: 0px 2vw 0 -6vw;
   }
 `;
 const Item = styled.li`

@@ -57,6 +57,9 @@ const H2 = styled.h2`
   &::before {
     content: "🍅 ";
   }
+  @media (max-width: ${MEDIA_QUERY_END_POINT.MOBILE}) {
+    margin: 10vh 0 5vh 0;
+  }
 `;
 const H3 = styled.h3`
   background-color: #a9bf04;
@@ -72,6 +75,7 @@ const Container = styled.article`
   border-radius: 20px;
   @media (max-width: ${MEDIA_QUERY_END_POINT.MOBILE}) {
     font-size: 12px;
+    margin-bottom: 40px;
   }
 `;
 const Synopsis = styled.p`

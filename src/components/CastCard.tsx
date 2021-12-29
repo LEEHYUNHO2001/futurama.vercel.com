@@ -64,6 +64,9 @@ const H2 = styled.h2`
   &::before {
     content: "🍆 ";
   }
+  @media (max-width: ${MEDIA_QUERY_END_POINT.MOBILE}) {
+    margin: 10vh 0 5vh 0;
+  }
 `;
 const ItemContainer = styled.ul`
   width: 80vw;
@@ -77,7 +80,7 @@ const ItemContainer = styled.ul`
     grid-template-columns: repeat(3, 1fr);
   }
   @media (max-width: ${MEDIA_QUERY_END_POINT.MOBILE}) {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(1, 1fr);
   }
 `;
 const Item = styled.li`
@@ -100,4 +103,5 @@ const A = styled.a`
   padding: 5px;
   border-radius: 10px;
   font-size: 12px;
+  margin-bottom: 20px;
 `;
