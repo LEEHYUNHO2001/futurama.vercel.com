@@ -13,12 +13,37 @@ const CharacterDetail: NextPage = () => {
   if (!data) return <Loading />;
   console.log(data);
 
-  const { images, name } = data;
+  const { images, name, age, gender, homePlanet, species, sayings } = data;
+
+  const randomSaying = (say: []) => {
+    const random = Math.floor(Math.random() * say.length);
+    return say[random];
+  };
 
   return (
     <Section>
       <H2>Character Detail</H2>
       <img src={images.main} alt="캐릭터" />
+      <TextContainer>
+        <p>
+          <strong>Name :</strong> {name.first} {name.middle} {name.last}
+        </p>
+        <p>
+          <strong>age :</strong> {age}
+        </p>
+        <p>
+          <strong>gender :</strong> {gender}
+        </p>
+        <p>
+          <strong>homePlanet :</strong> {homePlanet}
+        </p>
+        <p>
+          <strong>species :</strong> {species}
+        </p>
+        <p>
+          <strong>sayings :</strong> {randomSaying(sayings)}
+        </p>
+      </TextContainer>
     </Section>
   );
 };
@@ -38,5 +63,11 @@ const H2 = styled.h2`
     content: "🥜 ";
   }
 `;
-
+const TextContainer = styled.article`
+  width: 80%;
+  padding: 20px;
+  margin-top: 20px;
+  background-color: #000;
+  color: #fff;
+`;
 export default CharacterDetail;
